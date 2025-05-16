@@ -1,0 +1,150 @@
+<<<<<<< HEAD
+# Environment
+venv/
+.env
+.vscode/
+.idea/
+=======
+# User configuration
+config/user_config.yaml
+>>>>>>> 05513f3 (Testing-1)
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+<<<<<<< HEAD
+env/
+=======
+>>>>>>> 05513f3 (Testing-1)
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+<<<<<<< HEAD
+
+# Data and credentials
+data/credentials/
+data/vector_db/
+data/user_data/
+data/logs/
+=======
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Data
+data/
+*.db
+*.sqlite3
+*.sqlite
+*.csv
+*.json
+!package.json
+!tsconfig.json
+!config/*.json
+
+# Models and large files
+models/
+*.h5
+*.pkl
+*.model
+*.bin
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.tfl
+*.lite
+*.mlmodel
+
+# Audio files
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.m4a
+*.aac
+
+# Credentials
+credentials/
+*.pem
+*.key
+*.crt
+*.cer
+*.der
+*.p12
+*.pfx
+*.p7b
+*.p7c
+*.p7m
+*.p7s
+*.p8
+*.p10
+
+# Docker
+.docker/
+docker-compose.override.yml
+>>>>>>> 05513f3 (Testing-1)
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+<<<<<<< HEAD
+
+# OS specific
+.DS_Store
+Thumbs.db
+=======
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentation
+docs/_build/
+site/
+
+# Misc
+.DS_Store
+Thumbs.db 
+>>>>>>> 05513f3 (Testing-1)

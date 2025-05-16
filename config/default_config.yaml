@@ -1,0 +1,268 @@
+# Default configuration for Jarvis
+
+# System settings
+system:
+  name: "Jarvis"
+  version: "1.0.0"
+  debug: false
+  log_level: INFO
+  data_dir: "data"
+  temp_dir: "data/temp"
+
+# Core settings
+core:
+  brain:
+    model: "gpt-4"
+    temperature: 0.7
+    max_tokens: 2000
+    context_window: 4000
+  
+  memory:
+    short_term:
+      max_items: 100
+      default_ttl: 3600  # 1 hour
+    long_term:
+      db_path: "data/memory.db"
+    vector_store:
+      dimension: 768
+      index_type: "L2"
+      store_path: "data/vector_store"
+
+# Voice settings
+voice:
+  wake_word: "jarvis"
+  language: "en-US"
+  sample_rate: 16000
+  channels: 1
+  chunk_size: 1024
+  timeout: 5
+  energy_threshold: 300
+  pause_threshold: 0.8
+
+# UI settings
+ui:
+  web_dashboard:
+    host: "localhost"
+    port: 5000
+    debug: false
+    template_dir: "ui/web_dashboard/templates"
+    static_dir: "ui/web_dashboard/static"
+
+# Integration settings
+integrations:
+  email:
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    imap_server: "imap.gmail.com"
+    imap_port: 993
+    use_tls: true
+    username: ""  # Set in user_config.yaml
+    password: ""  # Set in user_config.yaml
+    default_folder: "INBOX"
+    max_emails: 10
+    unread_only: false
+  
+  calendar:
+    provider: "google"
+    credentials_file: "data/credentials/calendar.json"
+  
+  weather:
+    api_key: ""
+    units: "metric"
+    language: "en"
+  
+  news:
+    api_key: ""
+    language: "en"
+    category: "general"
+
+# Security settings
+security:
+  encryption_key: ""  # Set in user_config.yaml
+  allowed_origins: ["http://localhost:5000"]
+  session_timeout: 3600  # 1 hour
+  max_login_attempts: 3
+  password_min_length: 8
+
+# LLM Configuration
+llm:
+  provider: "openai"  # Options: openai, anthropic, local
+  model_name: "distilgpt2"
+  max_length: 512
+  temperature: 0.7
+  top_p: 0.9
+  api_key: ""  # Set via environment variable
+
+# Memory Settings
+memory:
+  short_term:
+    max_tokens: 4000
+    expiration_minutes: 30
+  long_term:
+    storage_path: "data/user_data/memory"
+  vector_store:
+    provider: "chroma"  # Options: chroma, pinecone, weaviate
+    embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+    collection_name: "jarvis_knowledge"
+  max_history: 100
+  storage_type: "in_memory"
+
+# Voice Interface
+voice:
+  speech_recognition:
+    engine: "whisper"  # Options: whisper, google, azure
+  text_to_speech:
+    engine: "elevenlabs"  # Options: elevenlabs, google, azure
+    voice_id: "default"
+    rate: 1.0
+
+# RAG Settings
+rag:
+  chunk_size: 512
+  chunk_overlap: 50
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+# Agent Settings
+agent:
+  max_iterations: 5
+  timeout_seconds: 30
+  tools_enabled: true
+
+# Tools
+tools:
+  enabled_tools:
+    - calculator
+    - web_search
+    - file_operations
+
+# Integration Settings
+integrations:
+  smart_home:
+    provider: "home_assistant"
+    base_url: "http://localhost:8123"
+  personal:
+    calendar:
+      provider: "google"
+      enabled: true
+    email:
+      provider: "gmail"
+      enabled: true
+    tasks:
+      provider: "todoist"
+      enabled: true
+  services:
+    weather:
+      provider: "openweathermap"
+      enabled: true
+    news:
+      provider: "newsapi"
+      enabled: true
+    media:
+      provider: "spotify"
+      enabled: true
+
+# Security Settings
+security:
+  ssl_verify: true
+  rate_limit:
+    requests_per_minute: 60
+
+# UI Settings
+ui:
+  web_dashboard:
+    enabled: true
+    port: 8080
+    host: "0.0.0.0"
+  status_display:
+    enabled: true
+    refresh_rate: 1.0  # seconds
+
+# Tools
+tools:
+  enabled_tools:
+    - calculator
+    - web_search
+    - file_operations
+
+# Memory Settings
+memory:
+  short_term:
+    max_tokens: 4000
+    expiration_minutes: 30
+  long_term:
+    storage_path: "data/user_data/memory"
+  vector_store:
+    provider: "chroma"  # Options: chroma, pinecone, weaviate
+    embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+    collection_name: "jarvis_knowledge"
+  max_history: 100
+  storage_type: "in_memory"
+
+# Voice Interface
+voice:
+  speech_recognition:
+    engine: "whisper"  # Options: whisper, google, azure
+  text_to_speech:
+    engine: "elevenlabs"  # Options: elevenlabs, google, azure
+    voice_id: "default"
+    rate: 1.0
+
+# RAG Settings
+rag:
+  chunk_size: 512
+  chunk_overlap: 50
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+# Agent Settings
+agent:
+  max_iterations: 5
+  tools_enabled: true
+
+# Tools
+tools:
+  enabled_tools:
+    - calculator
+    - web_search
+    - file_operations
+
+# Integration Settings
+integrations:
+  smart_home:
+    provider: "home_assistant"
+    base_url: "http://localhost:8123"
+  personal:
+    calendar:
+      provider: "google"
+      enabled: true
+    email:
+      provider: "gmail"
+      enabled: true
+    tasks:
+      provider: "todoist"
+      enabled: true
+  services:
+    weather:
+      provider: "openweathermap"
+      enabled: true
+    news:
+      provider: "newsapi"
+      enabled: true
+    media:
+      provider: "spotify"
+      enabled: true
+
+# Security Settings
+security:
+  ssl_verify: true
+  rate_limit:
+    requests_per_minute: 60
+
+# UI Settings
+ui:
+  web_dashboard:
+    enabled: true
+    port: 8080
+    host: "0.0.0.0"
+  status_display:
+    enabled: true
+    refresh_rate: 1.0  # seconds 

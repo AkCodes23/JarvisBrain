@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jarvis Dashboard</h1>
+            <div class="system-status">
+                <span class="status-label">System Status:</span>
+                <span id="system-status" class="status-value">Loading...</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="components">
+                <h2>Components</h2>
+                <div id="components-list" class="components-grid">
+                    <!-- Components will be loaded here -->
+                </div>
+            </section>
+
+            <section class="logs">
+                <h2>System Logs</h2>
+                <div id="logs-list" class="logs-container">
+                    <!-- Logs will be loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html> 

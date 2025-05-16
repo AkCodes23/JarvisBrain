@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  jarvis:
+    build: .
+    container_name: jarvis
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}
+      - VOSK_MODEL_PATH=/app/models/vosk-model-small-en-us
+    depends_on:
+      - redis
+      - chroma
+
+  redis:
+    image: redis:7-alpine
+    container_name: jarvis-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: jarvis-chroma
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      - ALLOW_RESET=true
+      - ANONYMIZED_TELEMETRY=false
+
+volumes:
+  redis_data:
+  chroma_data: 
