@@ -63,9 +63,9 @@ Once Jarvis is running, you can interact with it using natural language. Here ar
 - "Show me running processes"
 - "Search for information about Python programming"
 
-To exit Jarvis, type:
+To exit Jarvis, say:
 - "exit"
-- "quit"
+- "Thank you"
 - "bye"
 
 Or press Ctrl+C
@@ -88,33 +88,6 @@ jarvis/
 ├── main.py            # Main entry point
 └── requirements.txt   # Dependencies
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- OpenAI for GPT models
-- ElevenLabs for voice synthesis
-- Whisper for speech recognition
-- ChromaDB for vector storage
-- All other open-source contributors
-
-## Support
-
-For support, please:
-- Open an issue on GitHub
-- Check the [documentation](docs/)
-- Join our [Discord community](https://discord.gg/jarvis)
 
 ## Roadmap
 
